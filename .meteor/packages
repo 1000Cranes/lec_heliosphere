@@ -8,3 +8,6 @@ meteor-platform
 insecure
 materialize:materialize
 iron:router
+sacha:spin
+accounts-ui
+accounts-meteor-developer
