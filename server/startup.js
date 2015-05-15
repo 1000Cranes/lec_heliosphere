@@ -14,3 +14,14 @@ if (Posts.find().count() === 0) {
     url: 'http://themeteorbook.com'
   });
 }
+
+Meteor.startup(function () {
+//   mPackagesUpdate();
+//   githubsUpdate();
+//   Meteor.setInterval(function() {
+//     mPackagesUpdate();
+//   }, 1000 * 10);
+//   Meteor.setInterval(function() {
+//     githubsUpdate();
+//   }, 1000 * 60 * 10);
+});

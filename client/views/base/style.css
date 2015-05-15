@@ -28,8 +28,8 @@ display:none;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: ease-out;
   -webkit-user-select: none;
-  background-color: rgb(239, 154, 154);
-  border-bottom-color: rgb(255, 255, 255);
+/*   background-color: rgb(239, 154, 154); */
+/*   border-bottom-color: rgb(255, 255, 255);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   border-bottom-style: none;
@@ -44,13 +44,13 @@ display:none;
   border-left-width: 0px;
   border-right-color: rgb(255, 255, 255);
   border-right-style: none;
-  border-right-width: 0px;
-  border-top-color: rgb(255, 255, 255);
+  border-right-width: 0px; */
+/*   border-top-color: rgb(255, 255, 255);
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   border-top-style: none;
   border-top-width: 0px;
-  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px; */
   box-sizing: border-box;
   color: rgb(255, 255, 255);
   cursor: pointer;
@@ -79,7 +79,6 @@ display:none;
   transition-property: all;
   transition-timing-function: ease-out;
   vertical-align: middle;
-
   will-change: opacity, transform;
   z-index: 1;
 }
