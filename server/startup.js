@@ -1,23 +1,10 @@
-if (Posts.find().count() === 0) {
-  Posts.insert({
-    title: 'Introducing Telescope',
-    url: 'http://sachagreif.com/introducing-telescope/'
-  });
-
-  Posts.insert({
-    title: 'Meteor',
-    url: 'http://meteor.com'
-  });
-
-  Posts.insert({
-    title: 'The Meteor Book',
-    url: 'http://themeteorbook.com'
-  });
-}
-
 Meteor.startup(function () {
-//   mPackagesUpdate();
-//   githubsUpdate();
+  //Packages.remove({});
+  console.log('Package count ...' + Packages.find({}).count());
+  //mPackagesUpdate();
+  //githubsUpdate(100); 
+  atmospheresUpdate(25);
+  //Packages.runCommand({renameCollection:"atmos[0].installs-per-year",to:"atmos[0].installs_per_year"});
 //   Meteor.setInterval(function() {
 //     mPackagesUpdate();
 //   }, 1000 * 10);

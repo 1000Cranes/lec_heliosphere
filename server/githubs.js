@@ -23,7 +23,7 @@ githubUpdate = function (p) {
   if(!m) return githubBadGit(p);
 
   console.log('g', gitRemaining);
-//  if(gitRemaining < 500) return console.log('Not enough git remaining to try', gitRemaining);
+  if(gitRemaining < 500) return console.log('Not enough git remaining to try', gitRemaining);
 
   var userAgent = "Meteor";
   if (Meteor.release) userAgent += "/" + Meteor.release;
@@ -33,7 +33,7 @@ githubUpdate = function (p) {
     var res = HTTP.get('https://api.github.com/repos/'+m[1]+'/'+m[2]+'?client_id='+Meteor.settings.github_client_id+'&client_secret='+Meteor.settings.github_client_secret, { headers: { Accept: 'application/json', "User-Agent": userAgent } });
 
     gitRemaining = +res.headers['x-ratelimit-remaining'];
-    //console.log('res', res);
+    console.log('res', res);
     Packages.update(p._id, { $set: { git: res.data } });
 
     // try to get changelog

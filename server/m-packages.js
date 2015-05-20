@@ -30,7 +30,8 @@ packageRequest = function (cb) {
       if(cp) {
           console.log('Update package', p.name);
         try {
-          Packages.update(cp._id, { $set: { name: p.name, 'meteor.package': p } });
+          Packages.update(cp._id, { $set: { name: p.name, 'meteor.package': p, updateGit: true, updateAtmos: true  } });
+          console.log('package updated ... ', p._id, p.name);
         } catch(e) {
           console.error('ERROR update package', cp, p, e);
         }
@@ -38,41 +39,42 @@ packageRequest = function (cb) {
           console.log('New package', p.name);
         try {
           Packages.insert({ name: p.name, meteor: { package: p } });
+           console.log('package inserted ... ', p._id, p.name);
         } catch(e) {
           console.error('ERROR insert package', p, e);
         }
       }
     });
 
-    _.each(res.collections.versions, function(v) {
-      console.log('New version', v.packageName, v.version);
+//     _.each(res.collections.versions, function(v) {
+//       console.log('New version', v.packageName, v.version);
 
-      var cp = Packages.findOne({ 'name': v.packageName });
-      // remove dependencies because we don't need it and it generates error with stevezhu:velocity.js
-      delete v.dependencies;
-      if(cp) {
-        // || semverCompare(v.version, cp.meteor.version.version) >= 0
-        if(!cp.meteor || !cp.meteor.version) {
-          console.log('  Update version', v.packageName, (cp.meteor && cp.meteor.version) ? cp.meteor.version.version : '0.0.0', '<', v.version);
-          try {
-            if(cp.meteor && cp.meteor.version && cp.meteor.version.git !== v.git)
-              Packages.update(cp._id, { $set: { updateGit: true } });
-            Packages.update(cp._id, { $set: { name: v.packageName, 'meteor.version': v } });
-          } catch(e) {
-            console.error('ERROR update version', cp, v, e);
-          }
-        } else {
-          console.log('  Ignore version ', v.packageName, (cp.meteor && cp.meteor.version) ? cp.meteor.version.version : '0.0.0', '>', v.version);
-        }
-      } else {
-          console.log('  No package for this version', v);
-        try {
-          Packages.insert({name: v.packageName, meteor: { version: v } });
-        } catch(e) {
-          console.error('ERROR insert version', v, e);
-        }
-      }
-    });
+//       var cp = Packages.findOne({ 'name': v.packageName });
+//       // remove dependencies because we don't need it and it generates error with stevezhu:velocity.js
+//       delete v.dependencies;
+//       if(cp) {
+//         // || semverCompare(v.version, cp.meteor.version.version) >= 0
+//         if(!cp.meteor || !cp.meteor.version) {
+//           console.log('  Update version', v.packageName, (cp.meteor && cp.meteor.version) ? cp.meteor.version.version : '0.0.0', '<', v.version);
+//           try {
+//             if(cp.meteor && cp.meteor.version && cp.meteor.version.git !== v.git)
+//               Packages.update(cp._id, { $set: { updateGit: true, updateAtmos: true  } });
+//             Packages.update(cp._id, { $set: { name: v.packageName, 'meteor.version': v } });
+//           } catch(e) {
+//             console.error('ERROR update version', cp, v, e);
+//           }
+//         } else {
+//           console.log('  Ignore version ', v.packageName, (cp.meteor && cp.meteor.version) ? cp.meteor.version.version : '0.0.0', '>', v.version);
+//         }
+//       } else {
+//           console.log('  No package for this version', v);
+//         try {
+//           Packages.insert({name: v.packageName, meteor: { version: v } });
+//         } catch(e) {
+//           console.error('ERROR insert version', v, e);
+//         }
+//       }
+//     });
 
     // Using setImmediate to allow GC to run each time in case there are a LOT of pages
     if (!res.upToDate) setImmediate(Meteor.bindEnvironment(packageRequest.bind(this, cb)));

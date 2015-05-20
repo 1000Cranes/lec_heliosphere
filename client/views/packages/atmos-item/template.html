@@ -1,0 +1,15 @@
+<template name="atmosItem">
+<div class="charts"> 
+<!--       {{> sparkline cursor="atmosInstalls" property="value" }} -->
+      <div>{{installs_per_year}}<br/>{{score}}<br/>{{starCount}}</div>
+    </div>
+    <div class="packageinfo">
+<!--       {{pathFor 'packagePage'}} -->
+      <h5><a href="" class="">{{name}}</a></h5>
+      <p>
+        {{latestVersion.description}}
+      <!--     Add check for null or bad github here -->
+      <!--           <a class="secondary-content btn waves-effect waves-light red" href='{{latestVersion.git}}'>Github</a> -->
+      </p>
+    </div>
+</template>
