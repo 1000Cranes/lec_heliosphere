@@ -1,7 +1,13 @@
 <template name="packageItem">
   <li class="collection-item">
+    <div class="charts"> 
+    {{> starChart data}}
+    </div>
+    <div class="packageinfo">
+    <h5><a href="{{pathFor 'packagePage'}}">{{name}}</a></h5>
     {{#each atmos}}
       {{> atmosItem}}
     {{/each}}
+    </div>
   </li>
 </template>

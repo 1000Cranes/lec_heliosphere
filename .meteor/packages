@@ -13,4 +13,4 @@ accounts-ui
 accounts-meteor-developer
 accounts-password
 http
-benmgreene:jquery-sparklines
+d3js:d3
