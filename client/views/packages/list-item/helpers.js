@@ -7,9 +7,9 @@ Template.packageItem.helpers({
       score: this.atmos[0].score,
       comments: 0, //Placeholder
       tutorials: 0, //Placeholder
-      maxScore: 100, //Placeholder
-      maxStars: 200, //Placeholder
-      maxInstalls: 30000, //Placeholder
+      maxScore: 800,
+      maxStars: 800,
+      maxInstalls: 30000,
       maxComments: 10, //Placeholder
       maxTutorials: 10 //Placeholder
     };

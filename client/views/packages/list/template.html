@@ -1,7 +1,16 @@
 <template name="packagesList">
-    <ul class="collection">
-    {{#each packages}}
-      {{> packageItem}}
-    {{/each}}
-  </ul>
+   <div class="row">
+     <div class="col s4">
+      <p>description goes here ... on what to do, that the search bar is across the top</p>
+      <p>filters go here</p>
+      <p>this tells a bit about the project.</p>
+     </div>
+      <div class="col s8">
+        <ul class="collection">
+          {{#each packages}}
+            {{> packageItem}}
+          {{/each}}
+        </ul>
+     </div>
+  </div>
 </template>

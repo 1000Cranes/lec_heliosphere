@@ -1,4 +1,3 @@
-//don't make this global ... use better way
 RadarChart = {
   draw: function(id, d, options){
   var cfg = {
@@ -6,9 +5,8 @@ RadarChart = {
 	 w: 600,
 	 h: 600,
 	 factor: 1,
-	 factorLegend: .85,
 	 levels: 3,
-	 maxValue: 0,
+	 maxValue: .99,
 	 radians: 2 * Math.PI,
 	 opacityArea: 0.5,
 	 ToRight: 0,

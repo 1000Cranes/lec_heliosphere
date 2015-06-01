@@ -1,6 +1,6 @@
-header, main, footer {
+/* header, main, footer {
   padding-left: 240px;
-}
+} */
   body {
     display: flex;
     min-height: 100vh;
@@ -20,70 +20,22 @@ display:none;
 .accounts-dialog {
  width:270px; 
 }
-#login-buttons .login-button, .accounts-dialog .login-button, #login-sign-in-link, #login-name-link {
--webkit-box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-transition-delay: 0s;
-  -webkit-transition-duration: 0.3s;
-  -webkit-transition-property: all;
-  -webkit-transition-timing-function: ease-out;
-  -webkit-user-select: none;
-  background-color: rgb(239, 154, 154);
-  border-bottom-color: rgb(255, 255, 255);
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom-style: none;
-  border-bottom-width: 0px;
-  border-image-outset: 0px;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  border-left-color: rgb(255, 255, 255);
-  border-left-style: none;
-  border-left-width: 0px;
-  border-right-color: rgb(255, 255, 255);
-  border-right-style: none;
-  border-right-width: 0px; 
-  border-top-color: rgb(255, 255, 255);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  border-top-style: none;
-  border-top-width: 0px;
-  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px;
-  box-sizing: border-box;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  height: 36px;
-  letter-spacing: 0.5px;
-  line-height: 36px;
-  outline-color: rgb(255, 255, 255);
-  outline-style: none;
-  outline-width: 0px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding-bottom: 0px;
-  padding-left: 28px;
-  padding-right: 28px;
-  padding-top: 0px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition-delay: 0s;
-  transition-duration: 0.3s;
-  transition-property: all;
-  transition-timing-function: ease-out;
-  vertical-align: middle;
-  will-change: opacity, transform;
-  z-index: 1;
+.logo-background {
+  background:#000;
+  height:64px;
+}
+.logo-background:hover !important {
+  background:#000;
+}
+.logo{
+  height:56px;
 }
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
+  }
+  nav .brand-logo{
+    transform: none;
+    left:0;
   }
 }

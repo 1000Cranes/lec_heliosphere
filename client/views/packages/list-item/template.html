@@ -1,0 +1,19 @@
+<template name="packageItem">
+  <li class="collection-item">
+<!--     <div class="charts"> 
+    {{> starChart data}}
+    </div> -->
+    <div class="packageinfo">
+    <h5><a href="{{pathFor 'packagePage'}}">{{name}}</a></h5> 
+      {{description}}
+      <br/>{{git}}
+      <br/>Stars: {{stars}}
+      <br/>Score: {{score}}
+      <br/>Installs: {{installs_per_year}}
+      <br/>Comments: #
+      <br/>Ease of Use:
+      <br/>Tags:
+      <br/>Tutorials:
+    </div>
+  </li>
+</template>

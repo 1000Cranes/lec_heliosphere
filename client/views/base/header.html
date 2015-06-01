@@ -1,11 +1,24 @@
 <template name="header">
      <header>
-      <nav class="top-nav orange">
+<!--       <nav class="top-nav orange">
         <div class="nav-wrapper container">
-{{> loginButtons align="right"}}
+          {{> atNavButton }}
             <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only left"><i class="mdi-navigation-menu"></i></a>
         </div>
          {{> sidebar}}
+      </nav> -->
+       
+      <nav class="black">
+        <div class="nav-wrapper">
+          <form>
+            <a href="{{pathFor 'packagesList'}}" class="brand-logo"><img src="images/4791260.png" class="logo"/></a>
+            <div class="input-field" style="margin-left:64px;">
+              <input id="search" type="search" required>
+              <label for="search"><i class="mdi-action-search"></i></label>
+              <i class="mdi-navigation-close"></i>
+            </div>
+          </form>
+        </div>
       </nav>
     </header>
 </template>
