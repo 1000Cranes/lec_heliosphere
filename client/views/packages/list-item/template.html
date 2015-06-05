@@ -1,8 +1,8 @@
 <template name="packageItem">
-  <li class="collection-item">
-<!--     <div class="charts"> 
+<!--   <li class="collection-item">
+    <div class="charts"> 
     {{> starChart data}}
-    </div> -->
+    </div>
     <div class="packageinfo">
     <h5><a href="{{pathFor 'packagePage'}}">{{name}}</a></h5> 
       {{description}}
@@ -15,5 +15,17 @@
       <br/>Tags:
       <br/>Tutorials:
     </div>
-  </li>
+  </li> -->
+  <div class="col s12 m6 l6">
+    <div class="card">
+      <div class="card-content">
+        <h5><a href="{{pathFor 'packagePage'}}">{{name}}</a></h5>
+        <p>{{description}}</p>
+         <div class="card-action grey-text">
+          1 <i class="tiny mdi-communication-forum"></i>
+          | 34 <i class="tiny mdi-editor-insert-drive-file"></i>
+         </div>
+      </div>
+    </div>
+  </div>
 </template>

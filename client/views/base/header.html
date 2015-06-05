@@ -12,7 +12,10 @@
         <div class="nav-wrapper">
           <form>
             <a href="{{pathFor 'packagesList'}}" class="brand-logo"><img src="images/4791260.png" class="logo"/></a>
-            <div class="input-field" style="margin-left:64px;">
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+              {{> atNavButton }}
+            </div>
+            <div class="input-field" style="margin-left:66px;">
               <input id="search" type="search" required>
               <label for="search"><i class="mdi-action-search"></i></label>
               <i class="mdi-navigation-close"></i>

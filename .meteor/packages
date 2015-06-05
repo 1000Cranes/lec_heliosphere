@@ -16,3 +16,8 @@ d3js:d3
 underscore
 useraccounts:materialize
 aldeed:autoform
+aldeed:simple-schema
+ongoworks:security
+aldeed:collection2
+msavin:mongol
+msavin:jetsetter

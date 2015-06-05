@@ -30,6 +30,15 @@ display:none;
 .logo{
   height:56px;
 }
+.collection .collection-item.avatar {
+  height: auto;
+}
+.collection-item {
+  border: none;
+}
+.collection .collection-item.avatar .title {
+  font-size: auto;
+}
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
