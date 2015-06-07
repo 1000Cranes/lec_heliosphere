@@ -6,5 +6,8 @@ Template.tagSection.events({
   'click #close-addTag-button': function () {
     $('#addTagForms').addClass('hidden');
     $('#addTag').removeClass('hidden');
+  },
+  'click .delete-tag-button': function () {
+    Meteor.call('deleteTag', this._id);
   }
 });
