@@ -17,5 +17,12 @@ AutoForm.hooks({
         return doc;
        }
      }
+  },
+  updateCommentForm: {
+    after:{
+     update:function(error, result){
+        $('#editCommentModal').closeModal();
+       }
+     }
   }
 });

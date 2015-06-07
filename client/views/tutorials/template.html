@@ -1,0 +1,19 @@
+<template name="tutorialSection">
+  {{#if currentUser}}
+  <a href="#" id="addTutorial" class="pink-text waves-effect waves-red btn-flat">Add Tutorial</a>
+  {{/if}}
+  <div id="addTutorialForm" class="hidden">
+      {{#autoForm collection="Tutorials" id="insertTutorialForm" type="insert"}}
+        {{> afQuickField name='title'}}
+        {{> afQuickField name='link'}}
+        {{> afQuickField name='description'}}
+        {{> afQuickField name='packageID' value=this._id}}
+        <button type="submit" class="btn waves-effect waves-light">Add Tutorial</button>
+       <a id="close-addTutorial-button" class="pink-text btn-flat waves-effect waves-red"><i class="mdi-navigation-close"></i></a>
+      {{/autoForm}}
+  </div>
+  {{#each packageTutorials}}
+  <h5><a href="{{link}}" class="teal-text">{{title}}</a></h5>
+  <p class="flow-text">{{description}}</p>
+  {{/each}}
+</template>

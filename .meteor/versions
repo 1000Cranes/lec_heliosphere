@@ -16,6 +16,8 @@ boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
 coffeescript@1.0.6
+comerc:autoform-typeahead@1.0.2
+comerc:bs-typeahead@1.0.2
 d3js:d3@3.5.5
 dburles:mongo-collection-instances@0.3.1
 ddp@1.1.0

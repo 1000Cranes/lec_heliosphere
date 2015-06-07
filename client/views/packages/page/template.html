@@ -3,30 +3,53 @@
     <div class="col s12 m12 l12">
       <h2>{{name}}</h2>
       <p class="flow-text">{{description}}</p>
+ 
     </div>
   </div>
   <div class="row">
     <div class="col s12 m6 l6">
-      <h4>Tags</h4>
-      <a href="#" class="btn orange">Routing</a>
-      <a href="#" class="btn purple">User Accounts</a>
+     <p>
+        <a href="{{git}}" class="btn pink waves-effect waves-light">GitHub</a>
+        <a href="#" class="btn pink waves-effect waves-light">Report Bug</a>
+        <a href="#" class="btn pink waves-effect waves-light">Atmosphere</a>
+      </p>
       <p><img class="responsive-img" src="http://lorempixel.com/400/200/abstract" /></p>
     </div>
     
     <div class="col s12 m6 l6">
-      <h4>Community Comments</h4>
-      {{#if currentUser}}
-          {{#autoForm collection="Comments" id="insertRootCommentForm" type="insert"}}
-              {{> afQuickField name='text'}}
-              {{> afQuickField name='packageID' value=this._id}}
-            <button type="submit" class="btn btn-primary">Add Comment</button>
-          {{/autoForm}}
-      {{else}}
-        <p class="pink-text flow-text">You must be <a href="{{pathFor 'signIn'}}" class="teal-text">logged in</a> to leave a comment</p>
-      {{/if}}
-      <ul class="collection" style="margin-top:3rem;">
-        {{> comments rootComments}}
-      </ul>
+      <h4>Difficulty Rating</h4>          
+        <a href="#" class="btn green waves-effect waves-light">Beginner</a>
+        <a href="#" class="btn orange waves-effect waves-light">Intermediate</a>
+        <a href="#" class="btn red waves-effect waves-light">Advanced</a>
+     <h4 style="margin-top:3rem;">Tags</h4>
+      {{> tagSection this}}
+<div class="col s12" style="margin-top:3rem;">
+            <ul class="tabs">
+              <li class="tab col s6 red-text"><a class="active" href="#tutorials">Tutorials</a></li>
+              <li class="tab col s6"><a href="#comments">Comments ({{numberofComments}})</a></li>
+            </ul>
+          </div>
+          <div id="tutorials" class="col s12">
+            <h4>Tutorials and Resources</h4>
+            {{> tutorialSection this}}
+          </div> <!-- END tutorials -->
+          <div id="comments" class="col s12">
+            <h4>Community Comments</h4>
+            {{#if currentUser}}
+                {{#autoForm collection="Comments" id="insertRootCommentForm" type="insert"}}
+                    {{> afQuickField name='text'}}
+                    {{> afQuickField name='packageID' value=this._id}}
+                  <button type="submit" class="btn">Add Comment</button>
+                {{/autoForm}}
+            {{else}}
+              <p class="pink-text flow-text">You must be <a href="{{pathFor 'signIn'}}" class="teal-text">logged in</a> to leave a comment</p>
+            {{/if}}
+            <ul class="collection" style="margin-top:3rem;">
+              {{> comments rootComments}}
+            </ul>
+              {{> editComment rootComments}}
+          </div> <!-- END comments -->
+
     </div>
 
   </div>

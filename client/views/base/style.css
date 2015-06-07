@@ -10,6 +10,9 @@
   main {
     flex: 1 0 auto;
   }
+.hidden {
+  display:none;
+}
 #login-buttons.login-buttons-dropdown-align-right #login-dropdown-list {
   right: inherit;
   margin-left:1px;

@@ -7,9 +7,14 @@ Meteor.publish('packages', function() {
 Meteor.publish('comments', function() {
   return Comments.find({});
 });
-Comments.permit('insert').ifLoggedIn().apply();
+
 
 Meteor.publish('tags', function() {
   return Tags.find({});
 });
-Tags.permit('insert').ifLoggedIn().apply();
+
+
+Meteor.publish('tutorials', function() {
+  return Tutorials.find({});
+});
+
