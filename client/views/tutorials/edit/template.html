@@ -1,0 +1,17 @@
+<template name="editTutorial">
+  <div id="editTutorialModal" class="modal">
+    {{#autoForm collection="Tutorials" id="tutorialCommentForm" type="update" doc=selectedTutorialDoc}}
+    <div class="modal-content">
+      <h4>Edit Tutorial</h4>
+        {{> afQuickField name='title'}}
+        {{> afQuickField name='link'}}
+        {{> afQuickField name='description'}}
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="delete-tutorial btn-flat red-text waves-effect waves-red left"><i class="mdi-action-delete"></i></a>
+      <a href="#" class="close-edit-tutorial-modal btn-flat deep-purple-text waves-effect waves-purple"><i class="mdi-navigation-close"></i></a>
+      <button type="submit waves-effect waves-light" class="btn amber"><i class="mdi-content-save"></i> Save Changes</button>
+    </div>
+    {{/autoForm}}
+  </div>
+</template>

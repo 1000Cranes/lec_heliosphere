@@ -1,22 +1,22 @@
 <template name="comments">
   {{#each this}}
-      <li class="collection-item">
+      <li class="collection-item noborder">
         {{#if canEdit}}
-          <a href="#editCommentModal" class="right pink-text btn-flat waves-effect waves-red modal-trigger"><i class="mdi-content-create"></i></a>
+          <a href="#editCommentModal" class="right deep-purple-text btn-flat waves-effect waves-purple modal-trigger comment-modal"><i class="mdi-content-create"></i></a>
         {{/if}}
 <!--           <h5>{{fetchAuthor.emails[0].address}}</h5> -->
           <p class="flow-text">{{text}}</p>
 
         {{#if canAddReply}}
-          <a class="reply-button pink-text btn-flat waves-effect waves-red"><i class="mdi-content-reply"></i> Reply</a>
+          <a class="reply-button deep-purple-text btn-flat waves-effect waves-purple"><i class="mdi-content-reply"></i> Reply</a>
           {{#if isAddingAReply}}
             <div class="container" style="padding-top:3rem;">
               {{#autoForm collection="Comments" id="insertReplyCommentForm" type="insert"}}
                   {{> afQuickField name='text'}}
                   {{> afQuickField name='packageID' value=packageID}}
                   {{> afQuickField name='parentID' value=this._id}}
-                <button type="submit" class="btn submit-reply-button waves-effect waves-light">Submit Reply</button>
-                <button class="close-reply-button pink-text btn-flat waves-effect waves-red"><i class="mdi-navigation-close"></i></button>
+                <button type="submit" class="btn amber submit-reply-button waves-effect waves-light">Submit Reply</button>
+                <button class="close-reply-button deep-purple-text btn-flat waves-effect waves-purple"><i class="mdi-navigation-close"></i></button>
               {{/autoForm}}
             </div>
           {{/if}}

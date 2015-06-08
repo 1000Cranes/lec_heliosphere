@@ -1,0 +1,10 @@
+AutoForm.hooks({
+  insertRootCommentForm:{
+    after:{
+     insert:function(doc){
+        $('#addCommentForm').addClass('hidden');
+        $('#addComment').removeClass('hidden');
+       }
+     }
+  }
+});

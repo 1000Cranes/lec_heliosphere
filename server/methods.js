@@ -6,5 +6,9 @@ Meteor.methods({
   deleteTag: function (tagID) {
     Tags.remove({_id: tagID});
     return true;
+  },
+  deleteTutorial: function (tutorialID) {
+    Tutorials.remove({_id: tutorialID});
+    return true;
   }
 });

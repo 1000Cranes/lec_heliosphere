@@ -1,0 +1,10 @@
+AutoForm.hooks({
+  insertTutorialForm:{
+    after:{
+     insert:function(doc){
+        $('#addTutorialForm').addClass('hidden');
+        $('#addTutorial').removeClass('hidden');
+       }
+     }
+  }
+});

@@ -1,4 +1,4 @@
-Template.tutorialSection.events({
+Template.addTutorial.events({
   'click #addTutorial': function () {
     $('#addTutorialForm').removeClass('hidden');
     $('#addTutorial').addClass('hidden');

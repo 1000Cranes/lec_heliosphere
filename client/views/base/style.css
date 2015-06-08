@@ -36,11 +36,14 @@ display:none;
 .collection .collection-item.avatar {
   height: auto;
 }
-.collection-item {
+.collection-item.noborder {
   border: none;
 }
 .collection .collection-item.avatar .title {
   font-size: auto;
+}
+.help-block {
+  color: #F44336;
 }
 @media only screen and (max-width : 992px) {
   header, main, footer {

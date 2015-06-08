@@ -1,0 +1,15 @@
+<template name="tutorialSection">
+  {{> addTutorial}}
+  {{> editTutorial}}
+  <ul class="collection" data-collapsible="accordion">
+  {{#each packageTutorials}}
+    <li class="collection-item">
+              {{#if canEdit}}
+          <a href="#editTutorialModal" id="tutorialModalTrigger" class="right deep-purple-text btn-flat waves-effect waves-purple modal-trigger"><i class="mdi-content-create"></i></a>
+        {{/if}}
+      <h5><a href="{{link}}" class="deep-purple-text">{{title}}</a></h5>
+        <p class="flow-text">{{description}}</p>
+    </li>
+  {{/each}}
+  </ul>
+</template>
