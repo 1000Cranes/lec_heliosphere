@@ -1,0 +1,22 @@
+<template name="editComment">
+  <div id="editCommentModal" class="modal bottom-sheet deep-purple lighten-3">
+     <div style="margin-top:1.5rem;">
+        <div class="container">
+      <a href="#" style="margin-bottom:1.5rem;" class="modal-close btn-flat black-text waves-effect waves-light right"><i class="mdi-navigation-close"></i> Close</a>
+      <div class="white" style="padding-top:1.5rem;padding-bottom:1.5rem;clear:both;">
+    {{#autoForm collection="Comments" id="updateCommentForm" type="update" doc=selectedCommentDoc}}
+    <div class="modal-content">
+      <h4>Edit Comment</h4>
+      <p>{{> afQuickField name='text'}}</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="delete-comment btn-flat red-text waves-effect waves-red left"><i class="mdi-action-delete"></i></a>
+      <button type="submit" class="btn deep-purple waves-effect waves-light"><i class="mdi-content-save"></i> Save Changes</button>
+    </div>
+    {{/autoForm}}
+      </div>
+    </div>
+    </div>
+
+  </div>
+</template>

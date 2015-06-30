@@ -1,5 +1,7 @@
 Meteor.startup(function () {
   //Packages.remove({});
+  //Tags.remove({});
+//   Comments.remove({});
   console.log('Package count ...' + Packages.find({}).count());
   //mPackagesUpdate();
   //atmospheresUpdate();

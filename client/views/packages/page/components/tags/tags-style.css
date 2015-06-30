@@ -1,0 +1,76 @@
+#addTag{
+  font-size: 1rem;
+}
+span.tag {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  align-items: flex-start;
+  background-color: rgb(43, 187, 173);
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(255, 255, 255);
+  border-left-style: none;
+  border-left-width: 0px;
+  border-right-color: rgb(255, 255, 255);
+  border-right-style: none;
+  border-right-width: 0px;
+  border-top-color: rgb(255, 255, 255);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-top-style: none;
+  border-top-width: 0px;
+/*   box-shadow: rgba(0, 0, 0, 0.180392) 0px 5px 11px 0px, rgba(0, 0, 0, 0.14902) 0px 4px 15px 0px; */
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+  font-size: .9rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  line-height: 1.25rem;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  outline-color: rgb(255, 255, 255);
+  outline-style: none;
+  outline-width: 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-bottom: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: ease-out;
+  vertical-align: middle;
+/*   width: 125.625px; */
+  will-change: opacity, transform;
+  word-spacing: 0px;
+  writing-mode: lr-tb;
+  -webkit-writing-mode: horizontal-tb;
+  z-index: 1;
+}
+

@@ -1,0 +1,11 @@
+<template name="tagSection">
+  {{#if hasTags}}
+  <p class="center">
+  {{#each packageTags}}
+  <span class="tag white deep-purple-text">{{name}} {{#if canEdit}}<a class="delete-tag-button deep-purple-text waves-effect waves-light"><i class="mdi-navigation-close"></i></a>{{/if}}</span>
+  {{/each}}
+  </p>
+  {{else}}
+  <p class="center">No Tags Yet.  {{#if currentUser}}<a href="#addTagModel" class="btn-flat green-text lighten-1 waves-effect waves-light modal-trigger"><i class="mdi-content-add"></i></a>{{/if}}</p>
+  {{/if}}
+</template>

@@ -1,0 +1,23 @@
+<template name="packageItem">
+  <div class="col s12 m12 l6">
+          <div class="card small">
+            <div class="{{ratingColor}} white-text" style="height:2rem;margin-top:-.5rem;">
+              
+            </div>
+            <div class="card-image">
+              <p>{{#each findTags}}<span class="tag white black-text">{{name}}</span> {{/each}}</p>
+
+<!--               <img src="images/sample-1.jpg"> -->
+              <span class="card-title"><a class="deep-purple-text" href="{{pathFor 'packagePage'}}">{{name}}</a></span>
+            </div>
+            <div class="card-content">
+              <p>{{description}}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">{{fetchNumberOfComments}} <i class="mdi-communication-forum"></i></a>
+              <a href="#">{{fetchNumberOfTutorials}} <i class="mdi-action-note-add"></i></a>
+              <a href="#">Atmosphere</a>
+            </div>
+          </div>
+    </div>
+</template>

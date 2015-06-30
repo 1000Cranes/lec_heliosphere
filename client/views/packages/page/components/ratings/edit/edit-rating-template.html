@@ -1,0 +1,22 @@
+<template name="editRating">
+  <div id="editRatingModal" class="modal bottom-sheet deep-purple lighten-3">
+    <div style="margin-top:1.5rem;">
+        <div class="container">
+      <a href="#" style="margin-bottom:1.5rem;" class="modal-close btn-flat black-text waves-effect waves-light right"><i class="mdi-navigation-close"></i> Close</a>
+      <div class="white" style="padding-top:1.5rem;padding-bottom:1.5rem;clear:both;">
+      {{#autoForm collection="Ratings" id="updateRatingForm" type="update" doc=selectedRatingDoc}}
+      <div class="modal-content black-text">
+        <h4>Edit Rating</h4>
+          {{> afQuickField name='rating' options=RatingSelectOptions noselect="true"}}
+
+      </div>
+      <div class="modal-footer white">
+        <a href="#" class="delete-rating btn-flat red-text waves-effect waves-red left"><i class="mdi-action-delete"></i></a>
+        <button type="submit" class="btn deep-purple waves-effect waves-light"><i class="mdi-content-save"></i> Save Changes</button>
+      </div>
+      {{/autoForm}}
+      </div>
+    </div>
+    </div>
+  </div>
+</template>

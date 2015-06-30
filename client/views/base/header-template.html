@@ -1,0 +1,43 @@
+<template name="header">
+     <header>
+      <nav class="grey darken-4">
+        <div class="nav-wrapper">
+            <a href="{{pathFor 'packagesList'}}" class="brand-logo"><img src="images/4791260.png" height="66px" class="logo"/></a>
+            <div class="right" style="padding-right:1.5rem;">
+            {{> atNavButton }}
+            </div>
+        </div>
+      </nav>
+    </header>
+    <div class="grey darken-3" style="padding-bottom:12rem;">
+      <h3 class="hide-on-med-and-down white-text" style="margin:1.5rem;">{{name}}</h3>
+      <h5 class="hide-on-large-only white-text" style="margin:1.5rem;">{{name}}</h5>
+      <p class="white-text" style="margin:1.5rem;">{{description}}</p>
+    </div>
+  {{#if viewFilters}}
+  <div class="grey lighten-4">
+            <div class="container z-depth-1 white" style="margin-top:-12rem;margin-bottom:1.5rem;">
+          <div style="padding:1rem;">
+              <p class="center-align">
+              {{#each ratings}}
+                <span class="tag {{color}} white-text"><input type="checkbox" id="chkbox{{name}}" class="filter-rating white-text" /><label class="white-text" for="chkbox{{name}}">{{name}}</label></span> 
+              {{/each}}
+              </p>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label for="search"><i class="mdi-action-search black-text"></i></label>
+              <i class="mdi-navigation-close"></i>
+            </div>
+            <div>
+              <p class="center-align">
+              {{#each tags}}
+                {{> tagList}}
+              {{/each}}
+              </p>
+            </div>
+          </div>
+          <div style="padding-bottom:1.5rem;"></div>
+      </div> <!-- end container -->
+  </div>
+  {{/if}}
+</template>

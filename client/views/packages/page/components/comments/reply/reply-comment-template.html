@@ -1,0 +1,24 @@
+<template name="replyComment">
+    <div id="replyCommentModal" class="modal bottom-sheet deep-purple lighten-3">
+     <div style="margin-top:1.5rem;">
+        <div class="container">
+      <a href="#" style="margin-bottom:1.5rem;" class="modal-close btn-flat black-text waves-effect waves-light right"><i class="mdi-navigation-close"></i> Close</a>
+      <div class="white" style="padding-top:1.5rem;padding-bottom:1.5rem;clear:both;">
+    {{#autoForm collection="Comments" id="insertReplyCommentForm" type="insert"}}
+    <div class="modal-content">
+      <h4>Reply to Comment</h4>
+      <p>                 
+        {{> afQuickField name='text'}}
+        {{> afQuickField name='packageID' value=packageID}}
+        {{> afQuickField name='parentID' value=replyToCommentID}}
+      </p>
+    </div>
+    <div class="modal-footer white">
+      <button type="submit waves-effect waves-light" class="btn deep-purple waves-effect waves-light"><i class="mdi-content-save"></i> Submit Reply</button>
+    </div>
+    {{/autoForm}}
+      </div>
+    </div> <!-- end container -->
+    </div> <!-- end div - margin top -->
+  </div> <!-- End Modal -->
+</template>

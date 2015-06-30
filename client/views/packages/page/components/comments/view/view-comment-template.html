@@ -1,0 +1,21 @@
+<template name="comments">
+  {{> replyComment}}
+  {{#each this}}
+      <li class="collection-item avatar">
+      <img src="{{gravatar}}?d=retro" alt="" class="circle">
+        {{#if canEdit}}
+          <a href="#editCommentModal" class="deep-purple-text btn-flat waves-effect waves-purple modal-trigger comment-modal right"><i class="mdi-content-create"></i><span class="hide-on-med-and-down"></span></a>
+        {{/if}}
+        {{#if canAddReply}}
+          <a href="#replyCommentModal" class="reply-button deep-purple-text btn-flat waves-effect waves-purple modal-trigger right comment-modal "><i class="mdi-content-reply"></i><span class="hide-on-med-and-down"> Reply</span></a>
+        {{/if}}
+          <p class="card-title" style="font-size:1.2rem;">{{userName}} <span class="grey-text" style="font-size:1rem;"> {{fetchRelativeTime}}</span></p>
+        <br/><p>{{text}}</p>
+        {{#if hasReplies}}
+          <ul class="collection" style="margin-top:1rem;">
+            {{> comments findReplies}}
+          </ul>
+        {{/if}}
+      </li>
+  {{/each}}
+</template>

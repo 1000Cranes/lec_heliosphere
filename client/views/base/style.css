@@ -1,17 +1,17 @@
-/* header, main, footer {
-  padding-left: 240px;
-} */
   body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
 
-  main {
+  .main-container {
     flex: 1 0 auto;
   }
 .hidden {
   display:none;
+}
+select{
+  display:inline-block;
 }
 #login-buttons.login-buttons-dropdown-align-right #login-dropdown-list {
   right: inherit;
