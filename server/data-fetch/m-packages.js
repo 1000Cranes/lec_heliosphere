@@ -1,7 +1,6 @@
 // Note to self - to limit the number of calls to atmosphere, I should have a counter.
 // on insert = 0
-// atmosphere pulls in 100 with the lowest count
-// when finished increment the count by one.
+
 
 
 //var SyncTokens = new Mongo.Collection('syncTokens');
@@ -31,11 +30,11 @@ packageRequest = function (cb) {
     syncToken = res.syncToken || {};
 
     _.each(res.collections.packages, function(p) {
-      console.log('  package', p._id, p.name);
+      //console.log('  package', p._id, p.name);
       var cp = Packages.findOne({ 'name': p.name });
       if(!cp) {
         try {
-          Packages.insert({ name: p.name });
+          Packages.insert({ name: p.name, counter: 0 });
            console.log('package inserted ... ', p._id, p.name);
         } catch(e) {
           console.error('ERROR insert package', p, e);

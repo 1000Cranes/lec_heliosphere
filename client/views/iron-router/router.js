@@ -10,3 +10,9 @@ Router.configure({
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound'
 });
+
+Router.configure({
+  layoutTemplate: 'basic-page-layout',
+  loadingTemplate: 'loading',
+  notFoundTemplate: 'notFound'
+});

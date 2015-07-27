@@ -1,0 +1,62 @@
+<template name="header">
+  <header>
+    <nav class="grey darken-4">
+      <div class="nav-wrapper">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a>
+        
+        <span class="right" style="margin-right:1rem;font-size:1rem;">
+          <a class="waves-effect waves-light btn" href="{{pathFor 'userGuidePage'}}">User Guide</a>
+          {{> atNavButton }}
+        </span>
+      </div>
+    </nav>
+    <div class="container">
+      
+    </div>
+
+  <div id="nav-mobile" class="side-nav fixed">
+      <div class="black-text" style="padding:1rem;">
+        <a href="{{pathFor 'packagesList'}}" class="brand-logo center"><img src="images/4791260.png" height="66px" class="logo center"/></a>
+        {{#if viewFilters}}
+        <div class="input-field">
+          <input id="search" type="search" value="{{searchText}}" required>
+          <label for="search"><i class="mdi-action-search black-text"></i></label>
+          <i class="mdi-navigation-close"></i>
+          <div class="input-field col s12">
+            <select id="itemsPerPage">
+              <option value="20" selected="{{selectedData '20'}}">20</option>
+              <option value="40" selected="{{selectedData '40'}}">40</option>
+              <option value="60" selected="{{selectedData '60'}}">60</option>
+              <option value="100" selected="{{selectedData '100'}}">100</option>
+            </select>
+          </div>    
+          <br/>
+          {{#each ratings}}
+          {{> ratingList}}
+          {{/each}}
+          <br/>
+          {{#each tags}}
+          {{> tagList}}
+          {{/each}}
+          <br/>          
+
+        </div>
+        {{/if}}
+      </div>
+      <div style="padding:1rem;">
+      <hr/>
+        <b>Built By:</b> Loura @ mightymeteorites.com
+        <hr/>
+        <b>Source:</b> <a href="" target="blank">Github</a>
+      </div>
+      
+      <br/>
+  </div>
+
+  </header>
+    <div class="pushpadding grey darken-3" style="padding-bottom:12rem;">
+      <h3 class="hide-on-med-and-down white-text" style="margin:1.5rem;">{{name}}</h3>
+      <h5 class="hide-on-large-only white-text" style="margin:1.5rem;">{{name}}</h5>
+      <p class="white-text" style="margin:1.5rem;">{{description}}</p>
+    </div>
+</template>

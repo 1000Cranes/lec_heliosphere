@@ -45,6 +45,7 @@ Security.defineMethod("ifCanEditRating", {
 Comments.permit('insert').ifLoggedIn().apply();
 // You can only modify your own comments if there are no replies and only if they don't try to change 
 //   the 'authorID', 'parentID', 'packageID', 'createDate', 'userName', 'gravatar' properties.
+Comments.permit('update').ifLoggedIn().ifHasRole({role: 'admin', group: 'default-group'}).apply();
 Comments.permit('update').ifLoggedIn().ifCanEditComment().exceptProps(['authorID', 'parentID', 'packageID', 'createDate', 'userName', 'gravatar']).apply();
 // You need to be logged in and owner to remove a comment. 
 Comments.permit('remove').ifLoggedIn().ifCanEditComment().apply();
@@ -57,6 +58,7 @@ Tags.permit('remove').ifLoggedIn().apply();
 Tutorials.permit('insert').ifLoggedIn().apply();
 // You can only modify your own tutorials and only if you don't try to change
 //    the 'userID', 'votes', 'voters', 'parentID', 'packageID' properties.
+Tutorials.permit('update').ifLoggedIn().ifHasRole({role: 'admin', group: 'default-group'}).apply();
 Tutorials.permit('update').ifLoggedIn().ifCanEditTutorial().exceptProps(['userID', 'votes', 'voters', 'parentID', 'packageID']).apply();
 // OR you can modify (add a vote) to a tutorial if you are logged in and you
 //  don't try to change the 'userID', 'title', 'link', 'description',  'voters', 'parentID', 'packageID' properties

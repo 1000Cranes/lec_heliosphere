@@ -1,0 +1,23 @@
+<template name="packageItem">
+  <div class="col s12 m6 l4">
+          <div class="card small">
+            
+            <div class="card-image grey darken-4">  
+              
+              <div style="clear:both;">
+              {{> starChart this}}
+              </div>
+              <span class="card-title"><a class="amber-text" href="{{pathFor 'packagePage' owner=fetchPackageOwner package=fetchPackageNameWithoutOwner}}">{{name}}</a></span>
+            </div>
+            <div class="card-content grey darken-4 white-text">
+              <p>{{description}}</p>
+            </div>
+            <div class="card-action {{ratingColor}} white-text">
+              <i class="mdi-communication-forum"></i>&nbsp;{{fetchNumberOfComments}}&nbsp;&nbsp;
+              <i class="mdi-action-note-add"></i>&nbsp;{{fetchNumberOfTutorials}}&nbsp;&nbsp;
+              <i class="mdi-action-label"></i>&nbsp;{{#each findTags}}<span class="white-text">{{name}},</span>&nbsp;{{/each}}
+              
+            </div>
+          </div>
+    </div>
+</template>

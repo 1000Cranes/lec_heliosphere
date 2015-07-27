@@ -22,5 +22,8 @@ Meteor.methods({
   removeVoteTutorial: function (tutorialID) {
     Tutorials.update(tutorialID, {$inc: {votes: -1}, $pull: {voters: Meteor.userId()}});
     return true;
+  },
+  getMaxInstalls: function() {
+    return Packages.findOne({},{sort: {installs_per_year: -1}}).installs_per_year;
   }
 });

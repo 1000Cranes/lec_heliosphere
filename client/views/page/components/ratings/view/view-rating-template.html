@@ -1,0 +1,27 @@
+<template name="ratingSection">
+  <div class="container z-depth-1 white" style="margin-top:-12rem;">
+    {{#if hasRatings}}
+    <div class="{{ratingColor}}">
+      <p style="margin: 1rem 1.5rem;padding:1rem 0;" class="white-text">
+        {{rating}} Level - {{ratingCount}} votes out of {{totalRatingCount}}
+        {{#if currentUser}}
+        <a href="#addRatingModel" style="margin-top:-.5rem;" class="btn-flat white-text waves-effect waves-light modal-trigger right"><i class="mdi-content-add"></i></a>
+        {{/if}}
+        {{#if canEdit}}
+        {{> editRating}}
+          <a href="#editRatingModal" style="margin-top:-.5rem;"  class="btn-flat white-text waves-effect waves-light modal-trigger right"><i class="mdi-content-create"></i></a>
+        {{/if}}
+      </p>
+      <div style="clear:both;"></div>
+    </div>
+    {{else}}
+        <div class="grey lighten-2">
+      <p style="margin: 1rem 1.5rem;padding:1rem 0;">
+        No ratings yet.  Please add one if you have experience with this package.
+        {{#if currentUser}}<a href="#addRatingModel" style="margin-top:-.5rem;" class="btn-flat green-text waves-effect waves-light modal-trigger right"><i class="mdi-content-add"></i></a>{{/if}}
+      </p>
+      <div style="clear:both;"></div>
+    </div>
+    {{/if}}
+  </div>
+</template>

@@ -10,7 +10,6 @@ iron:router
 sacha:spin
 accounts-ui
 accounts-meteor-developer
-accounts-password
 http
 d3js:d3
 underscore
@@ -26,4 +25,6 @@ comerc:autoform-typeahead
 jparker:gravatar
 momentjs:moment
 service-configuration
-matteodem:easy-search
+alanning:roles
+kookoskar:iron-router-roles
+vazco:universe-html-purifier

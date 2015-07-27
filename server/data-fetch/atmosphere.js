@@ -1,3 +1,6 @@
+// atmosphere pulls in 100 with the lowest count
+// when finished increment the count by one.
+
 atmosphereUpdate = function (p) {
   if(!p) return;
 
@@ -11,9 +14,10 @@ atmosphereUpdate = function (p) {
     var score = res.data[0].score;
     var git = res.data[0].latestVersion.git;
     var description = res.data[0].latestVersion.description;
+    var counter = p.counter + 1;
     
-    Packages.update(p._id, { $set: { installs_per_year: installs_per_year, stars: stars, score: score, git: git, description: description } });
-    console.log('package updated ... ', p._id, p.name);
+    Packages.update(p._id, { $set: { installs_per_year: installs_per_year, stars: stars, score: score, git: git, description: description, counter: counter } });
+    console.log('package updated ... ', p._id, p.name, p.counter);
   } catch(e) {
     if(e && e.response && e.response.statusCode === 404) {
       console.error('  404', e, e.response);
@@ -25,6 +29,7 @@ atmosphereUpdate = function (p) {
 };
 
 var atmospheresUpdateInProgress = false;
+
 atmospheresUpdate = function() {
   console.log('Get Atmosphere...');
   if(atmospheresUpdateInProgress) return console.log('atmospheresUpdate already in progress');
@@ -37,7 +42,7 @@ atmospheresUpdate = function() {
 //   Packages.update({  updateAtmos: true }, { $unset: {  updateAtmos: '' } }, { multi: true });
 
   // Update those who we never tried
-  var needUpdate = Packages.find({});
+  var needUpdate = Packages.find({}, {sort: {counter: 1}, limit: 250});
   console.log('Updating: ', needUpdate.count());
   var updated = 0;
   needUpdate.forEach(function (p) {

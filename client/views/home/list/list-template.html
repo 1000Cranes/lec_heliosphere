@@ -1,0 +1,14 @@
+<template name="packagesList">
+    <div>
+            {{#each packages}}
+            {{> packageItem}}
+          {{/each}}
+        <div class="col s12 m6 l4">
+          <div class="card small grey darken-4">
+            <div class="card-image grey darken-4">      
+              <span class="card-title"><a class="amber-text" id="load-more" href="#">Load More</a></span>
+            </div>
+          </div>
+    </div>
+    </div>   
+</template>

@@ -1,1 +1,0 @@
-//Meteor.subscribe('packages', Session.get('tag-filters'), Session.get('rating-filter'), Session.get('search-filter'), Session.get('limit-filter'));
