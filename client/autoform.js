@@ -22,7 +22,7 @@ AutoForm.hooks({
         doc.authorID = Meteor.userId();
         doc.createDate = new Date();
        var user = Meteor.user();
-        doc.gravatar = Gravatar.imageUrl(user.emails[0].address);
+        doc.gravatar = Gravatar.imageUrl(user.profile.name); // ? since meteor accounts don't give email
         doc.userName = user.profile.name; 
         return doc;
        }
@@ -34,7 +34,7 @@ AutoForm.hooks({
         doc.authorID = Meteor.userId();
         doc.createDate = new Date();
        var user = Meteor.user();
-        doc.gravatar = Gravatar.imageUrl(user.emails[0].address);
+        doc.gravatar = Gravatar.imageUrl(user.profile.name); // ? since meteor accounts don't give email
         doc.userName = user.profile.name; 
         return doc;
        }
