@@ -63,8 +63,15 @@ Meteor.publish('packages', function(tags, ratings, search, limit) {
       var potentialPackages = Tags.find({ name: { $in: tags } }).map(function (connector) {
           return connector.packageID;
       }); // packages with correct tags
+      console.log('packageIDs : ' + packageIDs );
+      console.log('potentialPackages : ' + potentialPackages );
+      if(packageIDs.length > 0 && potentialPackages.length > 0){
+      } else {
+        if(potentialPackages.length > 0){
+          packageIDs = potentialPackages;
+        }
+      }
       
-      packageIDs = _.intersection(packageIDs, potentialPackages) ; //packageIDs with the right rating
     }
   }
   
