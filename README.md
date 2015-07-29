@@ -1,7 +1,7 @@
-Mesosphere
+Heliosphere
 =============
 
-A meta data collector for meteor.js packages
+A metadata collector for meteor.js packages
 
 Goal
 -------

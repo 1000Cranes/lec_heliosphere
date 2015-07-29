@@ -1,3 +1,7 @@
 .selectedTag{
   border: .25rem solid black !important;
 }
+
+[type="checkbox"]+label {
+  height: inherit;
+}
