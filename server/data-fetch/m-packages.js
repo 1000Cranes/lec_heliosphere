@@ -23,7 +23,7 @@ mPackagesUpdate = function () {
 
 packageRequest = function (cb) {
   remote.call('syncNewPackageData', syncToken, {}, function (err, res) {
-    console.log('  Page', count++);
+    //console.log('  Page', count++);
     if (err) return console.log('Error', err);
     if (!res) return console.log('No results returned');
     

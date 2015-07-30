@@ -17,7 +17,7 @@ atmosphereUpdate = function (p) {
     var counter = p.counter + 1;
     
     Packages.update(p._id, { $set: { installs_per_year: installs_per_year, stars: stars, score: score, git: git, description: description, counter: counter } });
-    console.log('package updated ... ', p._id, p.name, p.counter);
+    //console.log('package updated ... ', p._id, p.name, p.counter);
   } catch(e) {
     if(e && e.response && e.response.statusCode === 404) {
       console.error('  404', e, e.response);
@@ -35,11 +35,6 @@ atmospheresUpdate = function() {
   if(atmospheresUpdateInProgress) return console.log('atmospheresUpdate already in progress');
 
   atmospheresUpdateInProgress = true;
-
-  // Update those who are marked as need to update and have good github
-//   var updated = 0;
-//   Packages.find({ updateAtmos: true }).forEach(function (p) { atmosphereUpdate(p); console.log('updated - ' + updated++ ); });
-//   Packages.update({  updateAtmos: true }, { $unset: {  updateAtmos: '' } }, { multi: true });
 
   // Update those who we never tried
   var needUpdate = Packages.find({}, {sort: {counter: 1}, limit: 250});
